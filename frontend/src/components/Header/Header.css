@@ -1,0 +1,461 @@
+/* carousel */
+.header .carousel .slide .header-contents .lady {
+    width: 530px;
+    height: 82vh;
+    margin-left: 95%;
+    margin-top:-84%;
+    object-fit: contain;
+}
+.header .carousel .slide .header-contents .fire{
+    width: 50px;
+    height: 45px;
+    margin-top:-98%;
+    margin-left: 135%;
+}
+.header .carousel .slide .header-contents .msg1{
+    width: 200px;
+    height: 15vh;
+    margin-left: 95%;
+    margin-top: 65px;
+}
+.header .carousel .slide .header-contents .msg2{
+    width: 200px;
+    height: 15vh;
+    margin-left: 95%;
+    margin-top: -114px;
+    margin-left: 147%;
+}
+  /* animation */
+
+.header .carousel .slide .header-contents .plate1{
+    width: 138px;
+    height: 16vh;
+    margin-left: 95%;
+    margin-top: 65px;
+    animation: moveInHalfCircle1 3s linear infinite;
+}
+
+@keyframes moveInHalfCircle1 {
+    0% {
+      transform: translate(2, -50px) rotate(1deg);
+    }
+    50% {
+      transform: translate(50px, 70px) rotate(0deg);
+    }
+  }
+
+.header .carousel .slide .header-contents .plate2{
+    width: 110px;
+    height: 14vh;
+    margin-left: 115%;
+    margin-top:1px;
+    animation: moveInHalfCircle2 3s linear infinite;
+}
+
+@keyframes moveInHalfCircle2 {
+  0% {
+    transform: translate(55px, 20px) rotate(0deg);
+  }
+}
+
+.header .carousel .slide .header-contents  .plate3{
+    width: 114px;
+    height: 14vh;
+    margin-left: 142%;
+    margin-top:-115px;
+    animation: moveInHalfCircle3 3s linear infinite;
+}
+
+@keyframes moveInHalfCircle3 {
+    0% {
+       transform: translate(-55px, 20px) rotate(0deg);
+    }
+  }
+
+.header .carousel .slide .header-contents  .plate4{
+    width: 114px;
+    height: 14vh;
+    margin-left: 162%;
+    margin-top:-225px;
+     animation: moveInHalfCircle4 3s linear infinite;
+}
+
+@keyframes moveInHalfCircle4 {
+  0% {
+    transform: translate(2, -70px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-50px, 50px) rotate(0deg);
+  }
+}
+
+
+/* 2nd man animation */
+.header .carousel .slide .header-contents .man {
+    width: 530px;
+    height: 82vh;
+    margin-left: 95%;
+    margin-top:-84%;
+}
+
+.header {
+    /* margin-top: 150px; */
+    margin-top: 25px;
+    margin-bottom: 20px;
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    overflow: hidden;
+    background:  #f2832f;
+    border-radius: 10px 10px 10px 10px;
+    animation: animate__lightSpeedInLeft 1s 1s 0s infinite left;
+}
+
+/* Style for the carousel container */
+.header .carousel .slide{
+    width: 100%;
+    height: 39.5vw;
+    text-align: start;
+}
+
+ .header-contents {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-top: 70px;
+    gap: 1.5vw;
+    max-width: 50%;
+    bottom: 10%;
+    left: 6vw;
+    animation: animate__backInLeft 5s infinite;
+    animation: 5s;
+}
+
+.header-contents h2 {
+    font-weight: 500;
+    color: white;
+    font-size: max(4.5vw, 22px);
+}
+
+.header-contents p {
+    color: white;
+    font-size: 1vw;
+}
+
+.header-contents button {
+    border: none;
+    color: #f2832f;
+    font-weight: 500;
+    padding: 1vw 2.3vw;
+    background-color: white;
+    font-size: max(1vw, 13px);
+    border-radius: 50px;
+    cursor: pointer;
+}
+/* LAPTOP */
+@media (max-width: 1024px) {
+    .header-contents {
+        margin-top: 30px;
+        max-width: 45%;
+    }
+    .header .carousel .slide .header-contents .lady{
+        height: 46vh;
+        width:400px;
+        margin-top: -320px;
+    }
+
+    .header .carousel .slide .header-contents .man{
+        height: 46vh;
+        width:400px;
+        margin-top: -320px;
+    }
+
+    .header .carousel .slide .header-contents .fire{
+        width: 25px;
+        height: 25px;
+        margin-top:-384px;
+        margin-left:145%;
+    }
+
+    .header .carousel .slide .header-contents .msg1{
+        width: 160px;
+        height:10vh;
+        margin-left: 95%;
+        margin-top: 25px;
+    }
+
+    .header .carousel .slide .header-contents .msg2{
+        width: 140px;
+        height:10vh;
+        margin-left: 158%;
+        margin-top: -83px;
+    }
+
+    .header .carousel .slide .header-contents .plate1{
+        width: 82px;
+        height:10vh;
+        margin-top: 15%;
+        margin-left: 110%;
+        animation: fadeInDown  2s infinite;
+    }
+
+    .header .carousel .slide .header-contents .plate2{
+        width: 78px;
+        height:8vh;
+        margin-top: -12%;
+        margin-left: 130%;
+        animation: fadeInUp  2s infinite;
+    }
+
+    .header .carousel .slide .header-contents .plate3{
+        width: 80px;
+        height:8vh;
+        margin-top: -22%;
+        margin-left: 156%;
+        animation: fadeInDown  2s infinite;
+    }
+
+    .header .carousel .slide .header-contents .plate4{
+        width: 74px;
+        height:8vh;
+        margin-top: -40%;
+        margin-left: 172%;
+        animation: fadeInUp  2s infinite;
+    }
+}
+/* tablet */
+@media (max-width: 768px) {
+    .header-contents {
+        margin-top: 30px;
+        max-width: 45%;
+    }
+    .header .carousel .slide .header-contents .lady{
+        height: 35vh;
+        width:350px;
+        margin-top: -250px;
+    }
+
+    .header .carousel .slide .header-contents .man{
+        height: 33vh;
+        width:250px;
+        margin-top: -225px;
+    }
+
+    .header .carousel .slide .header-contents .fire{
+        width: 20px;
+        height: 20px;
+        margin-top:-289px;
+        margin-left:155%;
+    }
+
+    .header .carousel .slide .header-contents .msg1{
+        width: 140px;
+        height:10vh;
+        margin-left: 95%;
+        margin-top: 8px;
+    }
+
+    .header .carousel .slide .header-contents .msg2{
+        width: 130px;
+        height:8vh;
+        margin-left: 163%;
+        margin-top: -73px;
+    }
+
+    .header .carousel .slide .header-contents .plate1{
+        width: 50px;
+        height:8vh;
+        margin-top: 14%;
+        margin-left: 120%;
+         animation: fadeInDown  2s infinite;
+
+    }
+
+    .header .carousel .slide .header-contents .plate2{
+        width: 48px;
+        height:6vh;
+        margin-top: -10%;
+        margin-left: 138%;
+          animation: fadeInUp  2s infinite;
+    }
+
+    .header .carousel .slide .header-contents .plate3{
+        width: 54px;
+        height:7vh;
+        margin-top: -23%;
+        margin-left: 159%;
+          animation: fadeInDown  2s infinite;
+    }
+
+    .header .carousel .slide .header-contents .plate4{
+        width: 54px;
+        height:7vh;
+        margin-top: -39%;
+        margin-left: 177%;
+         animation: fadeInUp  2s infinite;
+    }
+}
+/* big phone */
+@media (max-width: 750px) {
+    .header-contents {
+        margin-top: 13px;
+        max-width: 65%;
+    }
+
+    .header-contents p {
+        display: none;
+    }
+
+    .header-contents button {
+        padding: 2vw 4vw;
+    }
+    .header .carousel .slide .header-contents .lady{
+        height: 20vh;
+        width:90px;
+        margin-top: -90px;
+    }
+
+    .header .carousel .slide .header-contents .man{
+        height: 20vh;
+        width:90px;
+        margin-top: -90px;
+    }
+
+    .header .carousel .slide .header-contents .fire{
+        width: 10px;
+        height: 10px;
+        margin-top:-125px;
+        margin-left:113%;
+    }
+
+    .header .carousel .slide .header-contents .msg1{
+        width: 40px;
+        height:4vh;
+        margin-left: 87%;
+        margin-top: 8px;
+    }
+
+    .header .carousel .slide .header-contents .msg2{
+        width: 35px;
+        height:4vh;
+        margin-left: 123%;
+        margin-top: -25px;
+    }
+
+    .header .carousel .slide .header-contents .plate1{
+        width: 24px;
+        height:4vh;
+        margin-top: 4%;
+        margin-left: 94%;
+         animation: none;
+    }
+
+    .header .carousel .slide .header-contents .plate2{
+        width: 20px;
+        height:3vh;
+        margin-top: -2%;
+        margin-left: 104%;
+         animation: none;
+    }
+
+    .header .carousel .slide .header-contents .plate3{
+        width: 24px;
+        height:3.5vh;
+        margin-top: -12%;
+        margin-left: 120%;
+         animation: none;
+    }
+
+    .header .carousel .slide .header-contents .plate4{
+        width: 24px;
+        height:3.5vh;
+        margin-top: -27%;
+        margin-left: 130%;
+         animation: none;
+    }
+}
+/* PHONE */
+@media (max-width: 320px) {
+    .header {
+        height: 120px;
+    }
+
+    .header-contents {
+        margin-top: -30px;
+        max-width: 65%;
+    }
+
+    .header-contents p {
+        display: none;
+    }
+
+    .header-contents button {
+        padding: 2vw 4vw;
+    }
+
+    .header .carousel .slide .header-contents .lady{
+        height: 15vh;
+        width:78px;
+        margin-top: -77px;
+    }
+
+    .header .carousel .slide .header-contents .man{
+        height: 15vh;
+        width:78px;
+        margin-top: -77px;
+    }
+
+    .header .carousel .slide .header-contents .fire{
+        width: 10px;
+        height: 10px;
+        margin-top:-100px;
+        margin-left:115%;
+    }
+
+    .header .carousel .slide .header-contents .msg1{
+        width: 40px;
+        height:4vh;
+        margin-left: 87%;
+        margin-top: 8px;
+    }
+
+    .header .carousel .slide .header-contents .msg2{
+        width: 35px;
+        height:4vh;
+        margin-left: 123%;
+        margin-top: -25px;
+    }
+
+    .header .carousel .slide .header-contents .plate1{
+        width: 24px;
+        height:4vh;
+        margin-top: 2%;
+        margin-left: 93%;
+        animation: none;
+    }
+
+    .header .carousel .slide .header-contents .plate2{
+        width: 20px;
+        height:4vh;
+        margin-top: -8%;
+        margin-left: 105%;
+         animation: none;
+    }
+
+    .header .carousel .slide .header-contents .plate3{
+        width: 20px;
+        height:4vh;
+        margin-top: -17%;
+        margin-left: 120%;
+         animation: none;
+    }
+
+    .header .carousel .slide .header-contents .plate4{
+        width: 20px;
+        height:3vh;
+        margin-top: -27%;
+        margin-left: 130%;
+         animation: none;
+    }
+}

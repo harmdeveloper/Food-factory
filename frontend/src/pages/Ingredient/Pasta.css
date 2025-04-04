@@ -1,0 +1,90 @@
+.recipe-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    display: flex; 
+    flex-direction: column; 
+}
+
+.rv-1 {
+    border-radius: 4px;
+}
+
+.ingredients-list {
+    margin: 10px 0;
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.ing-name {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.r-1 {
+    display: flex; 
+    margin-top: 20px; 
+    align-items: flex-start; 
+}
+
+.r-1 img {
+    margin-top: 29px;
+    width: 150px;
+    margin-right: 20px;
+}
+
+.instruction {
+    margin-left: 2%;
+    width: 450px; 
+}
+
+.feedback1 {
+    margin: 2%;
+    width: 200px; 
+}
+
+.resp-name {
+    color: #f2832f;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .r-1 {
+        flex-direction: column; 
+        align-items: center; 
+        margin-top: 10px; 
+    }
+
+    .r-1 img {
+        width: 80%;
+        margin-right: 0; 
+        margin-bottom: 10px; 
+    }
+
+    .instruction {
+        font-size: 14px;
+        width: 100%; 
+        margin-left: 0; 
+    }
+
+    .feedback1 {
+        font-size: 14px;
+        width: 100%; 
+    }
+}
+
+@media (max-width: 768px) {
+    .recipe-container {
+        padding: 10px; 
+    }
+
+    .ing-name {
+        font-size: 1.2em; 
+    }
+
+    .instruction, .feedback1 {
+        margin-left: 0; 
+        width: 100%;
+    }
+}
