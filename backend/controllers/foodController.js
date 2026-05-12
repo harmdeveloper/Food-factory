@@ -24,15 +24,26 @@ const addFood = async (req, res) => {
 }
 
 //all food list
-const listfood =async  (req, res) => {
-try {
-    const foods = await foodmodel.find({});
-    res.json({success:true,data:foods})
-} catch (error) {
+const listfood = async (req, res) => {
+  try {
+    console.log("Food API called");
+
+    const foods = await foodModel.find({});
+    
+    res.json({
+      success: true,
+      data: foods
+    });
+
+  } catch (error) {
     console.log(error);
-    res.json({success:false,message:"error"})
-}
-}
+
+    res.json({
+      success: false,
+      message: error.message
+    });
+  }
+};
 
 //remove fooditem
 const removefood =async(req,res) =>{
