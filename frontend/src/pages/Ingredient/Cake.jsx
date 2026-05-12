@@ -41,7 +41,7 @@ const Cake = () => {
 
             {/* Cup Cake */}
             <div className="r-1">
-                <img src="http://localhost:4000/images/1726687986332food_17.png" alt="Cup Cake" />
+                <img src="https://food-factory-backend.vercel.app/images/1726687986332food_17.png" alt="Cup Cake" />
                 <div>
                     <h3 className='ing-name'>Ingredients:</h3>
                     <ul className="ingredients-list">
@@ -84,7 +84,7 @@ Chill Mixture: Cover and refrigerate the mixture for at least 2 hours (or overni
 
             {/* Vegan Cake */}
             <div className="r-1">
-                <img src="http://localhost:4000/images/1726688026355food_18.png" alt="Vegan Cake" />
+                <img src="https://food-factory-backend.vercel.app/images/1726688026355food_18.png" alt="Vegan Cake" />
                 <div>
                     <h3 className='ing-name'>Ingredients:</h3>
                     <ul className="ingredients-list">
@@ -127,7 +127,7 @@ Chill Mixture: Cover and refrigerate the mixture for at least 2 hours (or overni
 
             {/* Butterscotch Cake */}
             <div className="r-1">
-                <img src="http://localhost:4000/images/1726688060952food_19.png" alt="Butterscotch Cake" />
+                <img src="https://food-factory-backend.vercel.app/images/1726688060952food_19.png" alt="Butterscotch Cake" />
                 <div>
                     <h3 className='ing-name'>Ingredients:</h3>
                     <ul className="ingredients-list">
@@ -170,7 +170,7 @@ Chill Mixture: Cover and refrigerate the mixture for at least 2 hours (or overni
 
             {/* Sliced Cake */}
             <div className="r-1">
-                <img src="http://localhost:4000/images/1726688094975food_20.png" alt="Sliced Cake" />
+                <img src="https://food-factory-backend.vercel.app/images/1726688094975food_20.png" alt="Sliced Cake" />
                 <div>
                     <h3 className='ing-name'>Ingredients:</h3>
                     <ul className="ingredients-list">
