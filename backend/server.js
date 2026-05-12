@@ -10,12 +10,11 @@ import 'dotenv/config';
 
 // app config
 const app = express();
-const port = process.env.PORT || 4000;
 
 // middleware
 app.use(express.json());
 
-// ✅ FIXED CORS
+// CORS
 app.use(cors({
   origin: [
     "https://food-factory-frontend.vercel.app",
@@ -38,15 +37,8 @@ app.use("/api", contactRouter);
 
 // test route
 app.get("/", (req, res) => {
-  res.send("API Working");
-});
-
-app.get("/", (req, res) => {
   res.json({ message: "Backend running on Vercel 🚀" });
 });
 
-module.exports = app;
-
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
+// ❌ NO app.listen in Vercel
+export default app;
