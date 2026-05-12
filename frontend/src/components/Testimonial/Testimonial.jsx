@@ -97,7 +97,7 @@ const TestimonialSlider = () => {
   useEffect(() => {
     const fetchTestimonials = async () => {
       try {
-        const response = await axios.get('https://food-factory-bfxg.vercel.app/api/contacts'); // API call to fetch data
+        const response = await axios.get('food-factory-backend.vercel.app/api/contacts'); // API call to fetch data
         if (response.data && response.data.contacts) {
           const contacts = response.data.contacts.map((contact, index) => ({
             id: contact._id,
