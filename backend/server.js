@@ -18,8 +18,8 @@ app.use(express.json());
 // ✅ FIXED CORS
 app.use(cors({
   origin: [
-    "https://food-factory-c8qcaq140-harms-projects.vercel.app",
-    "https://food-factory-rho.vercel.app"
+    "https://food-factory-frontend.vercel.app",
+    "https://food-factory-admin-swart.vercel.app"
   ],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
