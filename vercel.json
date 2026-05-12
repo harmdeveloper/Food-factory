@@ -9,5 +9,8 @@
       "entrypoint": "backend",
       "routePrefix": "/api"
     }
+    {
+  "buildCommand": "vite build"
+}
   }
 }
