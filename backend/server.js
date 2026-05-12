@@ -16,7 +16,7 @@ app.use(express.json());
 
 // CORS
 app.use(cors({
-  origin: [
+  origin:"*"|| [
     "https://food-factory-frontend.vercel.app",
     "https://food-factory-admin-swart.vercel.app"
   ],
@@ -25,7 +25,16 @@ app.use(cors({
 }));
 
 // db
-connectDB();
+const startDB = async () => {
+  try {
+    await connectDB();
+    console.log("DB Connected");
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+startDB();
 
 // routes
 app.use("/api/food", foodRouter);
