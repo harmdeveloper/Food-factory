@@ -28,19 +28,20 @@ app.use(cors({
 // db
 let isConnected = false;
 
-const startDB = async () => {
+export const connectDB = async () => {
   if (isConnected) return;
 
   try {
-    await connectDB();
+    await mongoose.connect(process.env.MONGO_URL);
     isConnected = true;
     console.log("DB Connected");
   } catch (err) {
-    console.log(err);
+    console.log("DB Error:", err.message);
   }
 };
 
 startDB();
+
 
 // routes
 app.use("/api/food", foodRouter);
