@@ -21,9 +21,10 @@ const cors = require("cors");
 
 app.use(cors({
   origin: [
-    "https://food-factory-93r8.vercel.app",
-    "https://food-factory-93r8-8cavqgp0l-harms-projects.vercel.app"
+    "https://food-factory-c8qcaq140-harms-projects.vercel.app",
+    "https://food-factory-rho.vercel.app/"
   ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
 
