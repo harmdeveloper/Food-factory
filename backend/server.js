@@ -17,7 +17,15 @@ const port = process.env.PORT || 4000;
 //middlware
 app.use(express.json())
 //access baclend from any front end
-app.use(cors())
+const cors = require("cors");
+
+app.use(cors({
+  origin: [
+    "https://food-factory-93r8.vercel.app",
+    "https://food-factory-93r8-8cavqgp0l-harms-projects.vercel.app"
+  ],
+  credentials: true
+}));
 
 //db connection
 connectDB();
