@@ -41,6 +41,10 @@ app.get("/", (req, res) => {
   res.send("API Working");
 });
 
+app.get("/", (req, res) => {
+  res.json({ message: "Backend running on Vercel 🚀" });
+});
+
 module.exports = app;
 
 app.listen(port, () => {
