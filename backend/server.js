@@ -16,7 +16,7 @@ app.use(express.json());
 
 // CORS
 app.use(cors({
-  origin:"*"|| [
+  origin:[
     "https://food-factory-frontend.vercel.app",
     "https://food-factory-admin-swart.vercel.app"
   ],
@@ -25,9 +25,14 @@ app.use(cors({
 }));
 
 // db
+let isConnected = false;
+
 const startDB = async () => {
+  if (isConnected) return;
+
   try {
     await connectDB();
+    isConnected = true;
     console.log("DB Connected");
   } catch (err) {
     console.log(err);
