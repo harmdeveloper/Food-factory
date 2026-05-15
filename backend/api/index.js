@@ -3,13 +3,13 @@
 import express from "express"
 import cors from "cors"
 import connectDB from "../config/db.js"
-import foodRouter from "./routes/foodRoute.js"
-import userRouter from "./routes/userRoute.js"
+import foodRouter from "../routes/foodRoute.js"
+import userRoute from "../routes/userRoute.js"
 import 'dotenv/config'
-import cartRouter from "./routes/cartRoute.js"
-import orderRouter from "./routes/orderRoute.js"
-import contactRouter from "./routes/contactRoute.js"
-import aiRoute from "./routes/aiRoute.js";
+import cartRouter from "../routes/cartRoute.js"
+import orderRouter from "../routes/orderRoute.js"
+import contactRouter from "../routes/contactRoute.js"
+import aiRoute from "../routes/aiRoute.js";
 
 //app config
 const app = express();
