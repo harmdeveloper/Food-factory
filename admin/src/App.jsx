@@ -13,7 +13,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
 
-  const url  = "https://food-factory-backend.vercel.app"
+  const url  = "https://food-factory-green.vercel.app"
 
   return (
     <div>
