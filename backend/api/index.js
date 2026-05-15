@@ -21,7 +21,15 @@ app.use(express.json())
 app.use(cors())
 
 //db connection
-connectDB();
+let isConnected = false;
+
+const connectDBOnce = async () => {
+    if (isConnected) return;
+    await connectDB();
+    isConnected = true;
+};
+
+connectDBOnce();
 
 //api endpoints
 app.use("/api/food", foodRouter)
