@@ -1,46 +1,35 @@
-//basic module type server
-import express from "express"
-import cors from "cors"
-import { connectDB } from "./config/db.js"
-import foodRouter from "./routes/foodRoute.js"
-import userRouter from "./routes/userRoute.js"
-import 'dotenv/config'
-import cartRouter from "./routes/cartRoute.js"
-import orderRouter from "./routes/orderRoute.js"
-import contactRouter from "./routes/contactRoute.js"
+import express from "express";
+import cors from "cors";
+import connectDB from "./config/db.js";
+import foodRouter from "./routes/foodRoute.js";
+import userRouter from "./routes/userRoute.js";
+import cartRouter from "./routes/cartRoute.js";
+import orderRouter from "./routes/orderRoute.js";
+import contactRouter from "./routes/contactRoute.js";
+import dotenv from "dotenv";
 
-//app config
+dotenv.config();
+
 const app = express();
-const port = process.env.PORT || 4000;
 
-//middleware
-app.use(express.json())
+app.use(express.json());
+app.use(cors());
 
-//cors
-app.use(cors())
+// DB (safe version)
+connectDB();
 
-//db connection
-let isConnected = false;
+// routes
+app.use("/api/food", foodRouter);
+app.use("/images", express.static("uploads"));
+app.use("/api/user", userRouter);
+app.use("/api/cart", cartRouter);
+app.use("/api/order", orderRouter);
+app.use("/api", contactRouter);
 
-const connectDBOnce = async () => {
-    if (isConnected) return;
-    await connectDB();
-    isConnected = true;
-};
-
-connectDBOnce();
-
-//api endpoints
-app.use("/api/food", foodRouter)
-app.use("/images", express.static('uploads'))
-app.use("/api/user", userRouter)
-app.use("/api/cart", cartRouter)
-app.use("/api/order", orderRouter)
-app.use("/api", contactRouter)
-
-//test route
 app.get("/", (req, res) => {
-    res.send("API Working")
-})
+    res.send("API Working");
+});
+
+// ❌ NO app.listen()
 
 export default app;
