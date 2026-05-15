@@ -26,7 +26,7 @@ app.use("/api/food", foodRouter);
 app.use("/api/user", userRouter);
 app.use("/api/cart", cartRouter);
 app.use("/api/order", orderRouter);
-app.use("/api/contacts", contactRouter);
+app.use("/api", contactRouter);
 
 // test route
 app.get("/", (req, res) => {
