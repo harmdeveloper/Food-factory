@@ -17,7 +17,7 @@ const TestimonialSlider = () => {
     const fetchTestimonials = async () => {
       try {
         const res = await axios.get(
-          'https://food-factory-green.vercel.app/api/contacts'
+         'https://food-factory-green.vercel.app/api/contacts'
         );
 
         // ✅ SAFE HANDLING (IMPORTANT)
