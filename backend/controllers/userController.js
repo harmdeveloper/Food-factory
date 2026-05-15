@@ -2,7 +2,7 @@ import userModel from "../models/userModel.js"
 //for authentication
 import jwt from "jsonwebtoken"
 //encrypt user data and save in db
-import bcrypt from "bcrypt"
+import bcrypt from "bcryptjs"
 //to check email password validation
 import validator from "validator"
 
