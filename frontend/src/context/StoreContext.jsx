@@ -7,7 +7,7 @@ export const StoreContext = createContext(null)
 const StoreContextProvider =(props) =>{
 
     const[cartItems,setCartItems]= useState({}); 
-    const url =  "https://food-factory-backend.vercel.app"
+    const url =  "https://food-factory-green.vercel.app"
     const [token,setToken]= useState("")
     const [food_list,setFoodList]= useState([])
 
