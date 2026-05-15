@@ -7,6 +7,6 @@ const contactRouter = express.Router();
 contactRouter.post('/contact', createContact);
 
 // Route to fetch all contacts
-contactRouter.get('/contact', getContacts);
+contactRouter.get('/contacts', getContacts);
 
 export default contactRouter;
