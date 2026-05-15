@@ -20,13 +20,13 @@ const TestimonialSlider = () => {
       try {
         const response = await axios.get('https://food-factory-green.vercel.app/api/contacts'); // API call to fetch data
         if (response.data && response.data.contacts) {
-          const contacts = response.data.contacts.map((contact, index) => ({
-            id: contact._id,
-            name: contact.firstName,  // Fetch name
-            content: contact.message,  // Fetch message
-            image: images[index % images.length]  // Assign static images cyclically
-          }));
-          setTestimonials(contacts);
+         const contacts =(response.data.contacts || response.data || []).map((contact, index) => ({
+  id: contact._id,
+  name: contact.firstName,
+  content: contact.message,
+  image: images[index % images.length]
+}));
+setTestimonials(contacts);
         } else {
           console.error('No contacts found in the response');
         }
