@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import '../Testimonial/Testimonial.css';
-import axios from 'axios'; // Import axios to fetch data
+import axios from 'axios';
 import { assets } from '../../assets/assets';
 
-// Static images array
 const images = [
   "https://avatars.mds.yandex.net/i?id=7e1454e28ea1b1ebc888bb6e1d6cc5bece154405-7068603-images-thumbs&n=13",
   "https://avatars.mds.yandex.net/i?id=2b6a677a57018177f618116dc3e4074bbf167046ca5d7da4-12416107-images-thumbs&n=13",
@@ -14,66 +13,76 @@ const TestimonialSlider = () => {
   const [testimonials, setTestimonials] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Fetch contact data from the backend
   useEffect(() => {
     const fetchTestimonials = async () => {
       try {
-        const response = await axios.get('https://food-factory-green.vercel.app/api/contacts'); // API call to fetch data
-        if (response.data && response.data.contacts) {
-         const contacts =(response.data.contacts || response.data || []).map((contact, index) => ({
-  id: contact._id,
-  name: contact.firstName,
-  content: contact.message,
-  image: images[index % images.length]
-}));
-setTestimonials(contacts);
-        } else {
-          console.error('No contacts found in the response');
-        }
+        const res = await axios.get(
+          'https://food-factory-green.vercel.app/api/contacts'
+        );
+
+        // ✅ SAFE HANDLING (IMPORTANT)
+        const data = res.data;
+
+        const contacts = (data?.contacts || data || []).map((contact, index) => ({
+          id: contact._id,
+          name: contact.firstName || "Anonymous",
+          content: contact.message || "",
+          image: images[index % images.length]
+        }));
+
+        setTestimonials(contacts);
+
       } catch (error) {
-        console.log('Error fetching testimonials:', error);
+        console.log("Error fetching testimonials:", error);
+        setTestimonials([]); // prevent crash
       }
     };
 
     fetchTestimonials();
   }, []);
 
-  // Automatically move to the next testimonial every 5 seconds
   useEffect(() => {
+    if (testimonials.length === 0) return;
+
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
+      setCurrentIndex((prev) =>
+        prev === testimonials.length - 1 ? 0 : prev + 1
       );
     }, 5000);
 
-    return () => clearInterval(interval); // Clear the interval when the component unmounts
+    return () => clearInterval(interval);
   }, [testimonials]);
+
+  if (testimonials.length === 0) {
+    return (
+      <div className="feedback">
+        <h2>Loading testimonials...</h2>
+      </div>
+    );
+  }
 
   return (
     <div className="feedback" id="feedback">
       <hr />
-      <h1 className="head animate__animated animate__zoomIn animate__infinite animate__slower">
-        Customer feedback
-      </h1>
+      <h1 className="head">Customer feedback</h1>
+
       <img className="chef-lady" src={assets.chef} alt="" />
 
-      {testimonials.length > 0 && (
-        <div className="testimonial-slider">
-          <div
-            className="testimonial head animate__animated animate__slideInLeft animate__infinite animate__slower"
-            style={{ animationDuration: '5s', animationDelay: '5s' }}
-          >
-            <img
-              src={testimonials[currentIndex].image}
-              alt={testimonials[currentIndex].name}
-              className="testimonial-image"
-            />
-            <p className="testimonial-content">"{testimonials[currentIndex].content}"</p>
-            <h4 className="testimonial-name">{testimonials[currentIndex].name}</h4>
-            <span className="testimonial-title">Customer</span>
-          </div>
+      <div className="testimonial-slider">
+        <div className="testimonial">
+          <img
+            src={testimonials[currentIndex].image}
+            alt={testimonials[currentIndex].name}
+            className="testimonial-image"
+          />
+
+          <p>"{testimonials[currentIndex].content}"</p>
+
+          <h4>{testimonials[currentIndex].name}</h4>
+
+          <span>Customer</span>
         </div>
-      )}
+      </div>
     </div>
   );
 };
