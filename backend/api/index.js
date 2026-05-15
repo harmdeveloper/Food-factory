@@ -9,7 +9,6 @@ import 'dotenv/config'
 import cartRouter from "../routes/cartRoute.js"
 import orderRouter from "../routes/orderRoute.js"
 import contactRouter from "../routes/contactRoute.js"
-import aiRoute from "../routes/aiRoute.js";
 
 //app config
 const app = express();
