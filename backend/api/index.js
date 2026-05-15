@@ -15,10 +15,10 @@ dotenv.config();
 const app = express();
 
 // middleware
-app.use(express.json());
 app.use(cors());
+app.use(express.json());
 
-// DB (safe call)
+// DB connect (IMPORTANT: call once safely)
 connectDB();
 
 // routes
@@ -26,11 +26,12 @@ app.use("/api/food", foodRouter);
 app.use("/api/user", userRouter);
 app.use("/api/cart", cartRouter);
 app.use("/api/order", orderRouter);
-app.use("/api", contactRouter);
+app.use("/api/contact", contactRouter);
 
+// test route
 app.get("/", (req, res) => {
-  res.send("API Working");
+  res.send("API Working 🚀");
 });
 
-// IMPORTANT: no app.listen()
+// IMPORTANT for Vercel
 export default app;
