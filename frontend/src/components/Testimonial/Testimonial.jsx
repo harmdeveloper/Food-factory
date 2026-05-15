@@ -23,12 +23,12 @@ const TestimonialSlider = () => {
         // ✅ SAFE HANDLING (IMPORTANT)
         const data = res.data;
 
-        const contacts = (data?.contacts || data || []).map((contact, index) => ({
-          id: contact._id,
-          name: contact.firstName || "Anonymous",
-          content: contact.message || "",
-          image: images[index % images.length]
-        }));
+        const contacts = (response.data?.contacts || []).map((contact, index) => ({
+  id: contact._id,
+  name: contact.firstName,
+  content: contact.message,
+  image: images[index % images.length]
+}));
 
         setTestimonials(contacts);
 
