@@ -59,7 +59,7 @@ const Contact = () => {
     e.preventDefault(); // Prevent page refresh
     if (validate()) {
       try {
-        const response = await axios.post('https://food-factory-green.vercel.app/api/contact', formData);
+        const response = await axios.post('https://food-factory-green.vercel.app/api/contacts', formData);
         alert('Message sent successfully!');
         // Optionally reset the form here
         setFormData({
