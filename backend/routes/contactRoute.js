@@ -4,7 +4,7 @@ import { createContact, getContacts } from '../controllers/contactController.js'
 
 const contactRouter = express.Router();
 
-contactRouter.post('/contact', createContact);
+contactRouter.post('/', createContact);
 
 // Route to fetch all contacts
 contactRouter.get('/', getContacts);
